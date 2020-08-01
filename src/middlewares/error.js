@@ -25,20 +25,11 @@ function converter(err, req, res, next) {
   let convertedError = err;
   if (err instanceof ValidationError) {
     const errors = {};
-    const { body, headers, params, query } = err.details;
-
-    if (body) {
-      errors.body = body.map(({ message }) => message);
-    }
-    if (headers) {
-      errors.headers = headers.map(({ message }) => message);
-    }
-    if (params) {
-      errors.params = params.map(({ message }) => message);
-    }
-    if (query) {
-      errors.query = query.map(({ message }) => message);
-    }
+    const parameters = Object.keys(err.details);
+    const extractMessage = ({ message }) => message;
+    parameters.forEach(
+      (param) => (errors[param] = err.details[param].map(extractMessage))
+    );
 
     convertedError = new ApiError({
       statusCode: err.statusCode,
