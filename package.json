@@ -1,16 +1,16 @@
 {
-  "name": "agendamento-diario-gaucho",
+  "name": "api-boilerplate",
   "version": "1.0.0",
-  "description": "Aplicacao para agendamento de troca de selos",
+  "description": "An boilerplate to create amazing APIs",
   "main": "src/server.js",
   "scripts": {
     "dev": "npx cross-env NODE_ENV=development npx nodemon src/server.js",
     "start": "npx cross-env NODE_ENV=production node src/server.js",
     "dev:docker": "docker-compose run --rm app npm install && docker-compose up -d"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["api", "express", "boilerplate"],
+  "author": "Diego Lopes",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
