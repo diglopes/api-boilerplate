@@ -5,4 +5,5 @@ config({ path });
 module.exports = {
   environment: process.env.NODE_ENV,
   appPort: process.env.APP_PORT || 3000,
+  appHost: process.env.APP_HOST || "localhost",
 };
