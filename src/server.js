@@ -6,7 +6,6 @@ async function init() {
 
   try {
     const app = createApp();
-    console.log(process.env);
     app.start(env.appPort);
   } catch (error) {
     console.log(error);
